@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="uni.android.md.muc_coursework" >
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+
+    <uses-permission android:name="android.permission.access_coarse_location" />
+    <uses-permission android:name="android.permission.access_fine_location" />
+
+    <uses-feature
+        android:glEsVersion="0x00020000"
+        android:required="true"/>
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" >
+
+        <activity
+            android:name=".MainActivity"
+            android:label="MUC_Coursework"
+            android:icon="@drawable/home256">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".LibraryActivity"
+            android:label="@string/title_activity_library" >
+        </activity>
+        <activity
+            android:name=".StatsActivity"
+            android:label="@string/title_activity_stats" >
+        </activity>
+        <activity
+            android:name=".MapActivity"
+            android:label="@string/title_activity_map" >
+        </activity>
+
+
+        <activity
+            android:name=".NewsActivity"
+            android:label="@string/title_activity_news" >
+        </activity>
+        <activity
+            android:name=".SettingsActivity"
+            android:label="@string/title_activity_settings" >
+        </activity>
+        <meta-data
+            android:name="com.google.android.maps.v2.API_KEY"
+            android:value="AIzaSyBK4KzE5I8AJL6U-tplsbATlcNq-pjOE1E"/>
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version"/>
+    </application>
+
+</manifest>

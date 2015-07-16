@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+<PreferenceCategory android:title="News sources">
+<ListPreference
+    android:key="PREF_LIST"
+    android:title="News source"
+    android:summary="Select news feed"
+    android:entries="@array/listentries"
+    android:entryValues="@array/listvalues"
+    android:defaultValue="http://www.theguardian.com/books/books+tone/reviews/rss"
+    ></ListPreference>
+
+
+ <!--   <EditTextPreference
+        android:key="pref_sync2"
+        android:title="Newslimit"
+        android:inputType="number"
+        android:defaultValue="100"
+        />-->
+
+</PreferenceCategory>
+
+</PreferenceScreen>
