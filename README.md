@@ -1,3 +1,3 @@
 # Book-Tracker-App
 Android application created for the module "Mobile Ubiquitous Computing" at GCU.
-[![ScreenShot](https://raw.github.com/GabLeRoux/WebMole/master/ressources/WebMole_Youtube_Video.png)](http://youtu.be/Tgyi_oNyf6M)
+[![ScreenShot](http://img.youtube.com/vi/Tgyi_oNyf6M/0.jpg)](http://youtu.be/Tgyi_oNyf6M)
