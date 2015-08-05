@@ -25,6 +25,7 @@ import java.util.concurrent.ExecutionException;
 
 
 public class MainActivity extends ActionBarActivity implements View.OnClickListener {
+//Activity class for main screen
 
     //Icon buttons
     ImageButton btnNews;
@@ -56,10 +57,6 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
 
         //Load default preferences, defined in preference menu layout file into shared preferences
         PreferenceManager.setDefaultValues(this, R.xml.preferences, false);
-        //SharedPreferences b = PreferenceManager.getDefaultSharedPreferences(this);
-        //String bRSSFeedURL = b.getString("PREF_LIST", "default choice");
-        //String cRSSFeedURL = b.getString("PREF_LIST", "default choice");
-
 
         //Icon buttons
         btnNews = (ImageButton) findViewById(R.id.btnNews);
@@ -170,7 +167,6 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
         if (id == R.id.action_settings) {
 
 
-            //Log.e("PREF", "SETTINGS SELECTED");
             //Load settings screen
             Intent settingsScreen = new Intent(getApplicationContext(), SettingsActivity.class);
             startActivity(settingsScreen);
@@ -192,10 +188,7 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
         return super.onOptionsItemSelected(item);
     }
 
-    //public void onDestroy(){
-    //int i = 0;
-    //   i ++;
-    //}
+
     @Override
     public void onClick(View view) {
         //screen object clicked
@@ -294,13 +287,6 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
 //display error to user
             Toast.makeText(this, "Commit not made( negative value )", Toast.LENGTH_SHORT).show();
         }
-        //make new commit
-        //update library
-
-        //update pages read
-        //c.setPages();
-
-
     }
 
     private void finishBook() {

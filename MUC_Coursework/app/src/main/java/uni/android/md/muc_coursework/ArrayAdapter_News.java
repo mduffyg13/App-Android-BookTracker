@@ -11,13 +11,13 @@ import android.widget.TextView;
  * Created by Mark on 10/12/2014.
  */
 public class ArrayAdapter_News extends ArrayAdapter<RSSDataItem> {
-//Used for loading news items into a list view
-//Works same way as library list view
+    //Used for loading news items into a list view
+    //Works same way as library list view
+    //Formatting of news to be improved
 
 
     private final Context context;
     private final RSSDataItem[] values;
-
 
     public ArrayAdapter_News(Context context, int resource, RSSDataItem[] values) {
         super(context, R.layout.listview_item_book, values);
@@ -35,8 +35,6 @@ public class ArrayAdapter_News extends ArrayAdapter<RSSDataItem> {
 
         TextView tv1 = (TextView) rowView.findViewById(R.id.txtTitle);
         TextView tv2 = (TextView) rowView.findViewById(R.id.txtDesc);
-        // ImageButton ibtnBook = (ImageButton)rowView.findViewById(R.id.ibtnBook);
-
 
         final RSSDataItem thisItem = values[position];
         tv1.setText(values[position].getItemTitle());
@@ -47,7 +45,6 @@ public class ArrayAdapter_News extends ArrayAdapter<RSSDataItem> {
         desc = desc.replace("<p>", "");
         desc = desc.replace("<strong>", "");
         tv2.setText(desc);
-
 
         return rowView;
     }

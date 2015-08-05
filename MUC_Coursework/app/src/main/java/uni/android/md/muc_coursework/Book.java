@@ -9,7 +9,7 @@ import java.util.Date;
 /**
  * Created by Mark on 21/11/2014.
  */
-public class Book {//implements Parcelable {
+public class Book {
 
     //Class which holds book objects which are loaded from the database
     //contains getters and setters for each data field and an overloaded constructor
@@ -129,14 +129,4 @@ public class Book {//implements Parcelable {
     }
 
 
-
-/*    @Override
-    public int describeContents() {
-        return 0;
-    }
-
-    @Override
-    public void writeToParcel(Parcel parcel, int i) {
-
-    }*/
 }

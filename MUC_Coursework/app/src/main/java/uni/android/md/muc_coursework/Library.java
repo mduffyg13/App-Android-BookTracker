@@ -8,7 +8,7 @@ import java.io.IOException;
  * Created by Mark on 21/11/2014.
  */
 public class Library {
-//Class which handles access to library database, not actually needed
+//Class which handles access to library database.
 
     private Book[] library;
     private LibraryDBMgr2 dbMgr;

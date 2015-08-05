@@ -10,8 +10,8 @@ public class Commit {
     //contains getters and setters for each data field and an overloaded constructor
 
 
-    Date date;
-    int pages;
+    private Date date;
+    private int pages;
 
     public Commit() {
         this.date = null;

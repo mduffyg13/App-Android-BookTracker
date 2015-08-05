@@ -16,17 +16,13 @@ import java.util.Map;
  */
 
 public class StatsThread extends Thread {
+//Class which draws and interperets graphical data on surface
+
     private int canvasWidth;
     private int canvasHeight;
-    // private float xPos = 0.0f;
-    // private float yPos = 0.0f;
-    // private int i;
-
 
     //Graph axis
     private float axisOffSet;
-    //private float axisRangeX;
-    // private float axisRangeY;
     private float barDistance;
 
     CommitDBMgr cDBMgr;
@@ -89,9 +85,7 @@ public class StatsThread extends Thread {
             graphData.put(month, totalpages);
 
         }
-
     }
-
 
     public void calcPercentage() {
 
@@ -105,9 +99,7 @@ public class StatsThread extends Thread {
 
             graphDataPercentage.put(i, monthPercentage);
 
-
         }
-
     }
 
     public void doStart() {
@@ -150,7 +142,6 @@ public class StatsThread extends Thread {
         }
     }
 
-
     private void svDraw(Canvas canvas) {
         if (run) {
             canvas.save();
@@ -163,7 +154,6 @@ public class StatsThread extends Thread {
             drawText(canvas);
         }
     }
-
 
     //Draw graph axis
     public void drawAxes(Canvas theCanvas) {
@@ -195,8 +185,6 @@ public class StatsThread extends Thread {
                     xPoints[i], canvasHeight - axisOffSet - barHeight, //top of bar
                     pStats);
         }
-
-
     }
 
     void drawText(Canvas theCanvas) {

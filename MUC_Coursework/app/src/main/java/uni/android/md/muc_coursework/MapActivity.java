@@ -15,10 +15,12 @@ import com.google.android.gms.maps.model.MarkerOptions;
 
 
 public class MapActivity extends FragmentActivity {
+    //TO ADD - Get current location, perform search for key words
 
-    private GoogleMap map; //Map insatnce to display
-    // private String search = "shop";
-    private LatLng GLASGOW = new LatLng(55.8580, -4.2590); //current location
+    //Map instance to display.
+    private GoogleMap map;
+    //Current location.
+    private LatLng GLASGOW = new LatLng(55.8580, -4.2590);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,18 +52,17 @@ public class MapActivity extends FragmentActivity {
 
     public void SetupMap() {
 
-
         //Create and attach google map to map fragment in layout file
         map = ((MapFragment) getFragmentManager().findFragmentById(R.id.map)).getMap();
         if (map != null) {
-            //move and zoom map to current location
+            //Move and zoom map to current location.
             map.moveCamera(CameraUpdateFactory.newLatLngZoom(GLASGOW, 14));
-            //enable user controls on map
+            //Enable user controls on map.
             map.getUiSettings().setCompassEnabled(true);
             map.getUiSettings().setMyLocationButtonEnabled(true);
             map.getUiSettings().setRotateGesturesEnabled(true);
         }
-        //Define marker locations
+        //Define marker locations.
         LatLng w1 = new LatLng(55.864703, -4.258084);
         LatLng w2 = new LatLng(55.858468, -4.256433);
         LatLng fb = new LatLng(55.862469, -4.253208);

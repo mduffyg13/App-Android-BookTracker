@@ -95,6 +95,4 @@ public class NewsActivity extends ActionBarActivity {
         }
         return super.onOptionsItemSelected(item);
     }
-
-
 }

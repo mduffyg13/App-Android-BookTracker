@@ -19,6 +19,8 @@ import android.widget.Toast;
 
 
 public class LibraryActivity extends ActionBarActivity implements DialogInterface.OnClickListener, View.OnClickListener {
+//Activity class for library interface
+
 
     //Current users library
     Library userLibrary;
@@ -41,12 +43,12 @@ public class LibraryActivity extends ActionBarActivity implements DialogInterfac
 
         btnAddBook = (Button) findViewById(R.id.btnAddBook);
         btnAddBook.setOnClickListener(this);
-        //   b = userLibrary.getLibrary();
 
         //Create adapter for listview, takes array of books and layout id
         lAdapter = new ArrayAdapter_Library(this, R.layout.listview_item_book, userLibrary.getLibrary());
 
         lvLibrary = (ListView) findViewById(R.id.lvLibrary);
+
         //fill list view with adapter result
         lvLibrary.setAdapter(lAdapter);
 
@@ -57,6 +59,7 @@ public class LibraryActivity extends ActionBarActivity implements DialogInterfac
                 //Log.e("TEST", Integer.toString(i));
             }
         });
+
         //Attach listview for context menu use
         registerForContextMenu(lvLibrary);
     }
@@ -68,7 +71,7 @@ public class LibraryActivity extends ActionBarActivity implements DialogInterfac
     }
     private void LoadLibray() {
         //Loads full library, used to refresh screen on updates
-        //userLibrary = new Library(this);
+
         userLibrary.loadLibrary();
         lAdapter = new ArrayAdapter_Library(this, R.layout.listview_item_book, userLibrary.getLibrary());
 
@@ -95,7 +98,7 @@ public class LibraryActivity extends ActionBarActivity implements DialogInterfac
 
                 //Call dialog, pass currently selected item
                 showEditDialog(info.position);
-                //editNote(info.id);*/
+
                 return true;
             //Delete button
             case R.id.delete:
@@ -104,7 +107,7 @@ public class LibraryActivity extends ActionBarActivity implements DialogInterfac
                 this.deleteBook(info.position);
                 //Reload altered library
                 this.LoadLibray();
-                //deleteNote(info.id);
+
                 return true;
             //Read button
             case R.id.read:
@@ -131,19 +134,9 @@ public class LibraryActivity extends ActionBarActivity implements DialogInterfac
         //Build and display dialog
         AlertDialog.Builder ab = new AlertDialog.Builder(this);
         ab.setTitle("EDIT BOOK");
-      /*  ab.setPositiveButton("SAVE", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialogInterface, int i) {
-
-                        //Update book;
-                        //String title =
-                    }
-                });*/
         ab.setPositiveButton("SAVE", this);
         ab.setNegativeButton("CANCEL", this);
-              /*  new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialogInterface, int i) { }});*/
+
         LayoutInflater lf = getLayoutInflater();
         View dialogView = lf.inflate(R.layout.dialog_book, null);
 
@@ -169,25 +162,14 @@ public class LibraryActivity extends ActionBarActivity implements DialogInterfac
     private void showAddDialog() {
         //Same function as above, loads with no book selected, new book instance
 
-        // AlertDialog a = new AlertDialog(getApplicationContext());
-        // a = new AlertDialog();
+
         aBook = new Book();
 
         AlertDialog.Builder ab = new AlertDialog.Builder(this);
         ab.setTitle("ADD BOOK");
-      /*  ab.setPositiveButton("SAVE", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialogInterface, int i) {
-
-                        //Update book;
-                        //String title =
-                    }
-                });*/
         ab.setPositiveButton("SAVE", this);
         ab.setNegativeButton("CANCEL", this);
-              /*  new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialogInterface, int i) { }});*/
+
         LayoutInflater lf = getLayoutInflater();
         View dialogView = lf.inflate(R.layout.dialog_book, null);
 
@@ -223,7 +205,7 @@ public class LibraryActivity extends ActionBarActivity implements DialogInterfac
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        //   getMenuInflater().inflate(R.menu.library, menu);
+
         return true;
     }
 
@@ -247,9 +229,7 @@ public class LibraryActivity extends ActionBarActivity implements DialogInterfac
         //Save entered book instance
         if (i == -1) {
             updateBook();
-            //  String title;
-            //  title = edTitle.getText().toString();
-            //Log.e("DIALOG TEST", title);
+
         }
 
     }

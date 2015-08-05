@@ -40,10 +40,7 @@ public class LibraryDBMgr2 extends SQLiteOpenHelper {
     public static final String COL_STARTDATE = "START_DATE";
     public static final String COL_ENDDATE = "END_DATE";
 
-    //Commits Table
-    // private static final String TBL_COMMITS = "Commits";
-    // public static final String COL_COMMITDATE = "COMMIT_DATE";
-    //  public static final String COL_PAGECOUNT = "PAGE_COUNT";
+
 
     private final Context appContext;
 
@@ -386,17 +383,14 @@ public class LibraryDBMgr2 extends SQLiteOpenHelper {
         } else {
             //if not create new book entry
             ContentValues values = new ContentValues();
-            // values.put(COL_ID, aBook.getBookID());
+
             values.put(COL_TITLE, aBook.getTitle());
             values.put(COL_AUTHOR, aBook.getAuthor());
             values.put(COL_NUMBEROFPAGES, String.valueOf(aBook.getNumberOfPages()));
             values.put(COL_MYRATING, aBook.getRating());
             values.put(COL_CURRENTPAGE, aBook.getCurrentPage());
             values.put(COL_READING, "false");
-            //values.put(COL_STARTDATE, aBook.getStartDate());
-            //  values.put(COL_ENDDATE, aBook.getEndDate());
-            //rest of entries
-//WHAT ABOUT AUTO INCREMENT????????????????????
+
 
             db.insert(TBL_BOOKS, null, values);
 

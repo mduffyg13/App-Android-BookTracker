@@ -9,6 +9,7 @@ import android.view.View;
 
 
 public class StatsActivity extends ActionBarActivity {
+//Activity class for stats screen
 
     SurfaceView sv;
 

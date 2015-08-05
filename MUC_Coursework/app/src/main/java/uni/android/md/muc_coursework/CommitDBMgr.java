@@ -158,41 +158,14 @@ public class CommitDBMgr extends SQLiteOpenHelper {
             throw new Error("Problems copying DB!");
         }
     }
-/*    public void copyDBToAssets() throws IOException {
-
-        //Open local db
-        String inFileName = "data/data/uni.android.md.muc_coursework/databases/" + DB_NAME;
-        File dbFile = new File(inFileName);
-       FileInputStream fis = new FileInputStream(dbFile);
-
-        String test = "C:\\Users\\Mark\\AndroidStudioProjects\\MUC_Coursework\\app\\src\\main";
-
-        File p = Environment.getExternalStorageDirectory();//appContext.getFilesDir();
-        //p.getPath()
-
-        String outFileName = test + "/file.txt";
-        //Open empty db as outputstream
-        OutputStream output = new FileOutputStream(outFileName);
-        byte[] buffer = new byte[1024];
-        int length;
-        while((length = fis.read(buffer))>0){
-            output.write(buffer, 0, length);
-        }
-
-        output.flush();
-        output.close();
-        fis.close();
-
-
-
-    };*/
-
 
     public Commit[] loadCommits() {
 
         //Load all rows from commit table
 
-   /*     try {
+   /*
+
+    try {
             this.copyDBFromAssets();
         } catch (IOException e) {
             e.printStackTrace();
@@ -236,8 +209,8 @@ public class CommitDBMgr extends SQLiteOpenHelper {
         Cursor cursor = db.rawQuery(query, null);
 
         if (cursor.moveToFirst()) {
-            //If commit date exists, add to existing count
 
+            //If commit date exists, add to existing count
             int totalPageCount = cursor.getInt(1) + aCommit.getPages();
             ContentValues values = new ContentValues();
 
@@ -258,9 +231,7 @@ public class CommitDBMgr extends SQLiteOpenHelper {
 
 
             db.insert(TBL_COMMITS, null, values);
-
         }
-
         db.close();
     }
 

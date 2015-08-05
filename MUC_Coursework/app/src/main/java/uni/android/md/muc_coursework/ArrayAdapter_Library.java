@@ -16,8 +16,10 @@ import android.widget.Toast;
  */
 public class ArrayAdapter_Library extends ArrayAdapter<Book> {
 
-    private final Context context; //App context adapter called from
-    private final Book[] values;    //values used to fill list view
+    //App context adapter called from.
+    private final Context context;
+    //values used to fill list view.
+    private final Book[] values;
 
 
     public ArrayAdapter_Library(Context context, int resource, Book[] values) {
@@ -30,7 +32,6 @@ public class ArrayAdapter_Library extends ArrayAdapter<Book> {
     public View getView(int position, View convertView, ViewGroup parent) {
 
         //For each item in array, list item is created using layout
-
         LayoutInflater inflater = (LayoutInflater) context
                 .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 
@@ -41,7 +42,6 @@ public class ArrayAdapter_Library extends ArrayAdapter<Book> {
         TextView tv1 = (TextView) rowView.findViewById(R.id.textView);
         TextView tv2 = (TextView) rowView.findViewById(R.id.textView2);
         ImageView imBook = (ImageView) rowView.findViewById(R.id.imBook);
-        // ImageButton ibtnBook = (ImageButton)rowView.findViewById(R.id.ibtnBook);
 
         final Book thisBook = values[position];
         tv1.setText(values[position].getTitle());

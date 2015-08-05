@@ -13,7 +13,6 @@ public class AsyncRSSParser extends AsyncTask<String, Integer, RSSDataItem[]> {
     //Class starts thread which using an instance of RSSParser to load items from
 //an rss feed.	
 
-
     private Context appContext;
     private String urlRSSToParse;
 
@@ -32,7 +31,8 @@ public class AsyncRSSParser extends AsyncTask<String, Integer, RSSDataItem[]> {
 
     @Override
     protected RSSDataItem[] doInBackground(String... params) {
-//method runs and returns info to calling activity when complete    
+//method runs and returns info to calling activity when complete
+
         RSSDataItem parsedData;
         RSSDataItem[] parsedDatas;
         RSSParser rssParser = new RSSParser();
@@ -41,7 +41,7 @@ public class AsyncRSSParser extends AsyncTask<String, Integer, RSSDataItem[]> {
         } catch (MalformedURLException e) {
             e.printStackTrace();
         }
-        // parsedData = rssParser.getRSSDataItem();
+
         // return parsedData;
         parsedDatas = rssParser.getRSSDataItems();
         return parsedDatas;
@@ -56,6 +56,4 @@ public class AsyncRSSParser extends AsyncTask<String, Integer, RSSDataItem[]> {
         // Message to indicate end of parsing
         Toast.makeText(appContext, "Parsing finished!", Toast.LENGTH_SHORT).show();
     }
-
-
 }
